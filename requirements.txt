@@ -7,4 +7,3 @@ langchain_huggingface
 PyPDF2
 text_generation
 pdfminer.six
-faiss
