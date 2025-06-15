@@ -1,0 +1,10 @@
+streamlit
+langchain
+faiss-cpu
+sentence-transformers
+langchain-community
+langchain_huggingface
+PyPDF2
+text_generation
+pdfminer.high_level
+faiss
