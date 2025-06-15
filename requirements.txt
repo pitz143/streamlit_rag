@@ -6,5 +6,5 @@ langchain-community
 langchain_huggingface
 PyPDF2
 text_generation
-pdfminer.high_level
+pdfminer.six
 faiss
