@@ -1,7 +1,7 @@
 import streamlit as st
 from io import BytesIO
 import torch
-
+import os
 import PyPDF2
 from pdfminer.high_level import extract_text as pdfminer_extract_text
 
@@ -10,6 +10,8 @@ import faiss
 import numpy as np
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+
+HF_TOKEN = os.environ.get("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")
 
 # --- PDF Text Extraction ---
 def extract_text_pypdf2(file):
@@ -42,10 +44,10 @@ def load_embedder():
 @st.cache_resource
 def load_lamini_gpt():
     tokenizer = AutoTokenizer.from_pretrained(
-        "MBZUAI/LaMini-GPT-774M", use_auth_token=True
+        "MBZUAI/LaMini-GPT-774M", use_auth_token=HF_TOKEN
     )
     model = AutoModelForCausalLM.from_pretrained(
-        "MBZUAI/LaMini-GPT-774M", use_auth_token=True
+        "MBZUAI/LaMini-GPT-774M", use_auth_token=HF_TOKEN
     )
     device = 0 if torch.cuda.is_available() else -1
     nlp = pipeline(
